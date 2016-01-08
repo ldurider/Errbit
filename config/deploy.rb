@@ -11,9 +11,9 @@ lock '3.4.0'
 
 SSHKit.config.command_map[:rake] = "#{fetch(:default_env)[:rvm_bin_path]}/rvm ruby-#{fetch(:rvm_ruby_version)} do bundle exec rake"
 set :application, 'errbit'
-set :repo_url, 'https://github.com/ChrisZoc/Errbit'
+set :repo_url, 'https://github.com/errbit/errbit.git'
 set :branch, ENV['branch'] || 'master'
-set :deploy_to, '/var/www/apps/errbit/'
+set :deploy_to, '/var/projects/errbit/'
 set :keep_releases, 5
 set :pty, true
 set :ssh_options, forward_agent: true
@@ -47,8 +47,8 @@ namespace :errbit do
       execute "touch #{shared_path}/.env"
 
       {
-        'config/newrelic.example.yml' => 'config/newrelic.yml',
-        'config/unicorn.default.rb'   => 'config/unicorn.rb'
+        'config/newrelic.yml' => 'config/newrelic.yml',
+        'config/unicorn.rb'   => 'config/unicorn.rb'
       }.each do |src, target|
         unless test("[ -f #{shared_path}/#{target} ]")
           upload! src, "#{shared_path}/#{target}"
