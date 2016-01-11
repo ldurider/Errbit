@@ -14,7 +14,7 @@
 # server list. The second argument is a, or duck-types, Hash and is
 # used to set extended properties on the server.
 
-server '104.130.207.217', user: 'haystak', roles: %w(web app), port: 22
+server '127.0.0.1', user: 'haystak', roles: %w(web app), port: 10022
 
 # Custom SSH Options
 # ==================
