@@ -22,3 +22,4 @@ before_fork do |server, worker|
       # someone else did our job for us
     end
   end
+end

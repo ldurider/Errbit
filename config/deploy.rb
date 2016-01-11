@@ -11,9 +11,9 @@ lock '3.4.0'
 
 SSHKit.config.command_map[:rake] = "#{fetch(:default_env)[:rvm_bin_path]}/rvm ruby-#{fetch(:rvm_ruby_version)} do bundle exec rake"
 set :application, 'errbit'
-set :repo_url, 'https://github.com/errbit/errbit.git'
-set :branch, ENV['branch'] || 'master'
-set :deploy_to, '/var/projects/errbit/'
+set :repo_url, 'https://github.com/ChrisZoc/Errbit.git'
+set :branch, ENV['branch'] || 'Errbit_nginx'
+set :deploy_to, '/var/projects/errbit'
 set :keep_releases, 5
 set :pty, true
 set :ssh_options, forward_agent: true
