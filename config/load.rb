@@ -1,5 +1,5 @@
 # load default ENV values (without overwriting any existing value)
-Dotenv.load('.env.default')
+Dotenv.load('.env')
 
 require_relative '../lib/configurator'
 
@@ -30,7 +30,7 @@ Errbit::Config = Configurator.run(
 
   # github
   github_url:                ['GITHUB_URL', lambda do |values|
-    values[:github_url].to_s.gsub(%r{/*\z}, '')
+    values[:github_url].gsub(%r{/*\z}, '')
   end],
   github_authentication:     ['GITHUB_AUTHENTICATION'],
   github_client_id:          ['GITHUB_CLIENT_ID'],
