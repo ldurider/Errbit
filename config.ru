@@ -1,4 +1,5 @@
 if ENV['USE_UNICORN_WORKER_KILLER']
+  require 'unicorn'
   require 'unicorn/worker_killer'
   max_request_min =  ENV['KILL_ON_REQUEST_COUNT_MIN'].to_i || 3072
   max_request_max =  ENV['KILL_ON_REQUEST_COUNT_MAX'].to_i || 4096
