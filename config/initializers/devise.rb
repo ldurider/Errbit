@@ -237,7 +237,7 @@ Devise.setup do |config|
 
   if Errbit::Config.github_authentication || Rails.env.test?
     github_options = {
-      scope:          Errbit::Config.github_access_scope.join(','),
+      scope:          Errbit::Config.github_access_scope,
       skip_info:      true,
       client_options: {
         site:          Errbit::Config.github_api_url,
